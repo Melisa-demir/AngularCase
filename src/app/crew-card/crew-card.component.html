@@ -1,0 +1,23 @@
+<div style="display:flex; padding: 1rem; gap: 20px;">
+    <div>
+        <p>{{'First Name' | translate}}: {{crew.firstName}}</p>
+        <p>{{'Last Name' | translate}}: {{crew.lastName}}</p>
+        <p>{{'Nationality' | translate}}: {{crew.nationality}}</p>
+        <p>{{'Days On Board' | translate}}: {{crew.daysOnBoard}}</p>
+        <p>{{'Daily Rate' | translate}}: {{crew.dailyRate}}</p>
+        <p>{{'Currency' | translate}}: {{crew.currency}}</p>
+        <p>{{'Total Income' | translate}}: {{crew.totalIncome}}</p>
+    </div>
+    <mat-divider [vertical]="true"></mat-divider>
+    <div>
+        <p>{{'Certificates' | translate}}:</p>
+        <mat-list role="list">
+            @for (item of crew.certificates; track item.name) {
+                <mat-list-item role="listitem"><div style="display: flex; gap: 16px;"><span>{{item.name}}</span><span>{{item.date | date}}</span></div></mat-list-item>
+            }
+        </mat-list>
+    </div>
+    
+
+
+</div>

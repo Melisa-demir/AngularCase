@@ -1,0 +1,43 @@
+<h2 mat-dialog-title>{{'Create User' | translate}}</h2>
+<mat-dialog-content style="display: flex; flex-direction: column;">
+  <mat-form-field>
+    <mat-label style="color: white !important;">{{'First Name' | translate}}</mat-label>
+    <input matInput [(ngModel)]="crewData.firstName">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label style="color: white !important;">{{'Last Name' | translate}}</mat-label>
+    <input matInput [(ngModel)]="crewData.lastName">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label style="color: white !important;">{{'Nationality' | translate}}</mat-label>
+    <input matInput [(ngModel)]="crewData.nationality">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label style="color: white !important;">{{'Days On Board' | translate}}</mat-label>
+    <input matInput type="number" [(ngModel)]="crewData.daysOnBoard" (change)="onChangeDaysOnBoardOrRate()">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label style="color: white !important;">{{'Daily Rate' | translate}}</mat-label>
+    <input matInput type="number" [(ngModel)]="crewData.dailyRate" (change)="onChangeDaysOnBoardOrRate()">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label style="color: white !important;">{{'Currency' | translate}}</mat-label>
+    <input matInput [(ngModel)]="crewData.currency">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label style="color: white !important;">{{'Total Income' | translate}}</mat-label>
+    <input matInput disabled type="number" [(ngModel)]="crewData.totalIncome">
+  </mat-form-field>
+  
+</mat-dialog-content>
+<mat-dialog-actions style="display: flex; justify-content: flex-end;">
+  <button mat-button color="primary" style="color: white !important;" (click)="onClickOK()">{{'Create' | translate}}</button>
+  <button mat-button color="warn" (click)="onClickCancel()">{{'Cancel' | translate}}</button>
+  
+</mat-dialog-actions>

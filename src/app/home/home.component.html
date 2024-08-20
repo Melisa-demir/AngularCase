@@ -1,0 +1,39 @@
+<button mat-raised-button (click)="openDialog()">{{'Create User' | translate}}</button>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="firstName">
+      <th mat-header-cell *matHeaderCellDef> {{'First Name' | translate}} </th>
+      <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+    </ng-container>
+    <ng-container matColumnDef="lastName">
+      <th mat-header-cell *matHeaderCellDef> {{'Last Name' | translate}} </th>
+      <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+    </ng-container>
+    <ng-container matColumnDef="nationality">
+      <th mat-header-cell *matHeaderCellDef> {{'Nationality' | translate}} </th>
+      <td mat-cell *matCellDef="let element"> {{element.nationality}} </td>
+    </ng-container>
+    <ng-container matColumnDef="daysOnBoard">
+      <th mat-header-cell *matHeaderCellDef> {{'Days On Board' | translate}} </th>
+      <td mat-cell *matCellDef="let element"> {{element.daysOnBoard}} </td>
+    </ng-container>
+    <ng-container matColumnDef="dailyRate">
+      <th mat-header-cell *matHeaderCellDef>   {{'Daily Rate' | translate}} </th>
+      <td mat-cell *matCellDef="let element"> {{element.dailyRate}} </td>
+    </ng-container>
+    <ng-container matColumnDef="currency">
+      <th mat-header-cell *matHeaderCellDef> {{'Currency' | translate}} </th>
+      <td mat-cell *matCellDef="let element"> {{element.currency}} </td>
+    </ng-container>
+    <ng-container matColumnDef="totalIncome">
+      <th mat-header-cell *matHeaderCellDef> {{'Total Income' | translate}} </th>
+      <td mat-cell *matCellDef="let element"> {{element.totalIncome}} </td>
+    </ng-container>
+    <ng-container matColumnDef="controls">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element"> <button mat-icon-button (click)="openEditDialog(element, $event)"><mat-icon>edit</mat-icon></button></td>
+      </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row class="table-row" (click)="navigateToCrewCard(row.id)" *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
