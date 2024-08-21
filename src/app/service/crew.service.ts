@@ -84,12 +84,56 @@ export class CrewService {
         dailyRate: 100,
         currency: 'USD',
         totalIncome: 1000
+      },
+      {
+        id: 4,
+        firstName: 'James',
+        lastName: 'Harrison',
+        nationality: 'USA',
+        certificates: [
+          {
+            name: 'US Citizen',
+            date: '2022-01-01'
+          },
+          {
+            name: 'US Passport',
+            date: '2022-01-01'
+          }
+        ],
+        daysOnBoard: 10,
+        dailyRate: 100,
+        currency: 'USD',
+        totalIncome: 1000
+      },
+      {
+        id: 5,
+        firstName: 'Luca ',
+        lastName: 'Bianchi',
+        nationality: 'USA',
+        certificates: [
+          {
+            name: 'US Citizen',
+            date: '2022-01-01'
+          },
+          {
+            name: 'US Passport',
+            date: '2022-01-01'
+          }
+        ],
+        daysOnBoard: 10,
+        dailyRate: 100,
+        currency: 'USD',
+        totalIncome: 1000
       }
+
     ]
     crewChange$ = new BehaviorSubject<Crew[]>(this.crew);
 
   constructor() {
-    this.loadFromLocalStorage();
+    if(localStorage.getItem("crew") !== null) {
+      this.loadFromLocalStorage();
+    }
+    
   }
 
   getCrew() {
